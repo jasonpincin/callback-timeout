@@ -1,5 +1,6 @@
 module.exports = function (f, t) {
     var err = new Error('timeout of '+t+'ms exceeded for callback ' + (f.name||'anonymous'))
+    err.name = 'Timeout'
     var ecb = function () {
         clearTimeout(timer)
         timer = null
