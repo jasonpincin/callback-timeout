@@ -6,21 +6,21 @@ test(function (t) {
     
     function doSomethingSlow(cb) { setTimeout(cb, 1000) }
     
-    doSomethingSlow(timeout(function doSomethingSlow (err) {
+    doSomethingSlow(timeout(function doSomethingSlowZeroHandler (err) {
         if (err)
             t.fail('got an error on 0 timeout')
         else
             t.pass('got no error on 0 timeout')
     }, 0))
 
-    doSomethingSlow(timeout(function doSomethingSlow (err) {
+    doSomethingSlow(timeout(function doSomethingSlowNullHandler (err) {
         if (err)
             t.fail('got an error on null timeout')
         else
             t.pass('got no error on null timeout')
     }, null))
     
-    doSomethingSlow(timeout(function doSomethingSlow (err) {
+    doSomethingSlow(timeout(function doSomethingSlowUndefinedHandler (err) {
         if (err)
             t.fail('got an error on undefined timeout')
         else
