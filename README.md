@@ -8,7 +8,7 @@ Executes callback with single error argument if timeout is exceeded before it's 
 # example
 
 ``` js
-var timeout = require('..')
+var timeout = require('callback-timeout')
 
 function doSomethingFast(cb) { setTimeout(cb, 100) }
 function doSomethingSlow(cb) { setTimeout(cb, 2000) }
