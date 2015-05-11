@@ -1,41 +1,53 @@
 {
-    "name": "callback-timeout",
-    "version": "0.1.0",
-    "description": "Invokes callback with single error argument if timeout occurs before it's invoked by other means",
-    "main": "index.js",
-    "scripts": {
-        "test": "tape test/**/*.js"
-    },
-    "directories": {
-        "example": "example",
-        "test": "test"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/jasonpincin/callback-timeout.git"
-    },
-    "homepage" : "https://github.com/jasonpincin/callback-timeout",
-    "keywords": [
-        "callback",
-        "timeout"
-    ],
-    "devDependencies" : {
-        "tape" : "~4.0.0"
-    },
-    "testling" : {
-        "files" : "test/*.js",
-        "browsers" : {
-            "ie"      : [ 8,9,10 ],
-            "firefox" : [ 17 ],
-            "chrome"  : [ 20 ],
-            "safari"  : [ 5.1 ],
-            "opera"   : [ 12 ]
-        }
-    },
-    "author": {
-        "name" : "Jason Pincin",
-        "email": "jason@pincin.com",
-        "url"  : "http://pincin.com"
-    },
-    "license": "MIT"
+  "name": "callback-timeout",
+  "version": "0.2.0",
+  "description": "Invokes callback with single error argument if timeout occurs before it's invoked by other means",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/**/*.js"
+  },
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jasonpincin/callback-timeout.git"
+  },
+  "homepage": "https://github.com/jasonpincin/callback-timeout",
+  "keywords": [
+    "callback",
+    "timeout"
+  ],
+  "devDependencies": {
+    "tape": "~4.0.0"
+  },
+  "testling": {
+    "files": "test/*.js",
+    "browsers": {
+      "ie": [
+        8,
+        9,
+        10
+      ],
+      "firefox": [
+        17
+      ],
+      "chrome": [
+        20
+      ],
+      "safari": [
+        5.1
+      ],
+      "opera": [
+        12
+      ]
+    }
+  },
+  "author": {
+    "name": "Jason Pincin",
+    "email": "jason@pincin.com",
+    "url": "http://pincin.com"
+  },
+  "license": "MIT"
 }
