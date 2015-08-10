@@ -1,11 +1,11 @@
-var test    = require('tape')
-,   timeout = require('..')
+var test    = require('tape'),
+    timeout = require('..')
 
 test(function (t) {
     t.plan(3)
-    
-    function doSomethingSlow(cb) { setTimeout(cb, 1000) }
-    
+
+    function doSomethingSlow (cb) { setTimeout(cb, 1000) }
+
     doSomethingSlow(timeout(function doSomethingSlowZeroHandler (err) {
         if (err)
             t.fail('got an error on 0 timeout')
@@ -19,7 +19,7 @@ test(function (t) {
         else
             t.pass('got no error on null timeout')
     }, null))
-    
+
     doSomethingSlow(timeout(function doSomethingSlowUndefinedHandler (err) {
         if (err)
             t.fail('got an error on undefined timeout')

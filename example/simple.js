@@ -1,7 +1,7 @@
 var timeout = require('..')
 
-function doSomethingFast(cb) { setTimeout(cb, 100) }
-function doSomethingSlow(cb) { setTimeout(cb, 2000) }
+function doSomethingFast (cb) { setTimeout(cb, 100) }
+function doSomethingSlow (cb) { setTimeout(cb, 2000) }
 
 doSomethingFast(timeout(function doSomethingFastHandler (err) {
     if (err)

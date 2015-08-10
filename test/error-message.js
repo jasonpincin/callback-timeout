@@ -1,11 +1,11 @@
-var test    = require('tape')
-,   timeout = require('..')
+var test    = require('tape'),
+    timeout = require('..')
 
 test(function (t) {
     t.plan(3)
 
-    function doSomethingFast(cb) { setTimeout(cb, 50) }
-    function doSomethingSlow(cb) { setTimeout(cb, 500) }
+    function doSomethingFast (cb) { setTimeout(cb, 50) }
+    function doSomethingSlow (cb) { setTimeout(cb, 500) }
 
     doSomethingFast(timeout(function doSomethingFastHandler (err) {
         if (err)
@@ -17,8 +17,9 @@ test(function (t) {
     doSomethingSlow(timeout(function doSomethingSlowHandler (err) {
         if (err) {
             t.pass('doSomethingSlowHandler got error')
-            t.ok(err.message.indexOf('slow function timed out') >- 1, 'callback err had custom error message')
-        } else {
+            t.ok(err.message.indexOf('slow function timed out') > -1, 'callback err had custom error message')
+        }
+        else {
             t.fail('doSomethingSlowHandler did not get an error')
         }
     }, 250, 'slow function timed out'))
