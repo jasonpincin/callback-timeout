@@ -7,9 +7,7 @@ callback-timeout
 
 Executes callback with single error argument if timeout is exceeded before it's called naturally
 
-[![browser support](http://ci.testling.com/jasonpincin/callback-timeout.png)](http://ci.testling.com/jasonpincin/callback-timeout)
-
-# example
+## example
 
 ``` js
 var timeout = require('callback-timeout')
@@ -32,23 +30,24 @@ doSomethingSlow(timeout(function doSomethingSlowHandler (err) {
 }, 1000))
 ```
 
-# usage
+
+## usage
 
 ``` js
 var timeout      = require('callback-timeout'),
     TimeoutError = require('callback-timeout/errors').TimeoutError
 ```
 
-## timeout(callback [, ms, msg])
+### timeout(callback [, ms, msg])
 
 Returns a callback function that will execute after `ms` milliseconds with a single `TimeoutError` argument if not invoked by other means first. If the `ms` timeout argument is omitted, 0, or null, then the timeout is disabled and the original callback is returned. `msg` may be used to set a custom error message (on timeout), otherwise an appropriate one will be set for you.
 
-## TimeoutError
+### TimeoutError
 
 The constructor of the error thrown when a timeout occurs.
 
 
-# install
+## install
 
 With [npm](https://npmjs.org) do:
 
@@ -56,6 +55,14 @@ With [npm](https://npmjs.org) do:
 npm install callback-timeout
 ```
 
-# license
 
-MIT
+## testing
+
+`npm test [--dot | --spec] [--coverage | --grep=pattern]`
+
+Specifying `--dot` or `--spec` will change the output from the default TAP style. 
+Specifying `--coverage` will print a text coverage summary to the terminal after 
+tests have ran, while `--pattern` will only run the test files that match the given 
+pattern.
+
+Open an html coverage report with `npm run view-cover`.
