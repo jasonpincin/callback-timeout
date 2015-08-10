@@ -46,7 +46,6 @@ Returns a callback function that will execute after `ms` milliseconds with a sin
 
 The constructor of the error thrown when a timeout occurs.
 
-
 ## install
 
 With [npm](https://npmjs.org) do:
@@ -55,14 +54,16 @@ With [npm](https://npmjs.org) do:
 npm install callback-timeout
 ```
 
-
 ## testing
 
-`npm test [--dot | --spec] [--coverage | --grep=pattern]`
+`npm test [--dot | --spec] [--grep=pattern]`
 
 Specifying `--dot` or `--spec` will change the output from the default TAP style. 
-Specifying `--coverage` will print a text coverage summary to the terminal after 
-tests have ran, while `--pattern` will only run the test files that match the given 
-pattern.
+Specifying `--grep` will only run the test files that match the given pattern.
 
-Open an html coverage report with `npm run view-cover`.
+### coverage
+
+`npm run coverage [--html]`
+
+This will output a textual coverage report. Including `--html` will also open 
+an HTML coverage report in the default browser.
