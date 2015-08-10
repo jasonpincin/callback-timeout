@@ -2,7 +2,7 @@ var test    = require('tape'),
     timeout = require('..')
 
 test(function (t) {
-    t.plan(3)
+    t.plan(4)
 
     function doSomethingFast (cb) { setTimeout(cb, 50) }
     function doSomethingSlow (cb) { setTimeout(cb, 500) }
@@ -13,6 +13,15 @@ test(function (t) {
         else
             t.pass('doSomethingFastHandler did not get an error')
     }, 1000, 'fast function timed out'))
+
+    doSomethingSlow(timeout(function (err) {
+        if (err) {
+            t.ok(err.message.indexOf('anonymous'), 'callback err has proper message for anonymous functions')
+        }
+        else {
+            t.fail('doSomethingSlowHandler did not get an error')
+        }
+    }, 250))
 
     doSomethingSlow(timeout(function doSomethingSlowHandler (err) {
         if (err) {
