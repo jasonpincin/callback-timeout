@@ -1,19 +1,20 @@
-module.exports = function (f, t, e) {
-    if (!t)
-        return f
-    var err = new Error(e || 'timeout of ' + t + 'ms exceeded for callback ' + (f.name || 'anonymous'))
-    err.name = 'Timeout'
-    var ecb = function () {
+var TimeoutError = require('./errors').TimeoutError
+
+module.exports = function callbackTimeout (f, t, e) {
+    if (!t) return f
+    var timer = setTimeout(onTimeout, t)
+    return callback
+
+    function onTimeout () {
         clearTimeout(timer)
         timer = null
-        f.call(f, new Error(err))
+        f.call(f, new TimeoutError(e || 'timeout of ' + t + 'ms exceeded for callback ' + (f.name || 'anonymous')))
     }
-    var timer = setTimeout(ecb, t)
-    var cb = function () {
+
+    function callback () {
         if (timer) {
             clearTimeout(timer)
             f.apply(f, arguments)
         }
     }
-    return cb
 }
