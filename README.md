@@ -1,6 +1,10 @@
 callback-timeout
 ================
 
+[![NPM version](https://badge.fury.io/js/callback-timeout.png)](http://badge.fury.io/js/callback-timeout)
+[![Build Status](https://travis-ci.org/jasonpincin/callback-timeout.svg?branch=master)](https://travis-ci.org/jasonpincin/callback-timeout)
+[![Coverage Status](https://coveralls.io/repos/jasonpincin/callback-timeout/badge.png?branch=master)](https://coveralls.io/r/jasonpincin/callback-timeout?branch=master)
+
 Executes callback with single error argument if timeout is exceeded before it's called naturally
 
 [![browser support](http://ci.testling.com/jasonpincin/callback-timeout.png)](http://ci.testling.com/jasonpincin/callback-timeout)

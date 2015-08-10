@@ -21,6 +21,7 @@
     "timeout"
   ],
   "devDependencies": {
+    "@jasonpincin/standard": "~5.0.0-7",
     "tape": "~4.0.0"
   },
   "author": {
@@ -29,6 +30,5 @@
     "url": "http://pincin.com"
   },
   "license": "MIT",
-  "dependencies": {
-  }
+  "dependencies": {}
 }
