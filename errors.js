@@ -1,9 +1,10 @@
-var inherits = require('util').inherits
+var inherits          = require('util').inherits,
+    captureStackTrace = require('capture-stack-trace')
 
 module.exports.TimeoutError = TimeoutError
 function TimeoutError (message) {
-    Error.captureStackTrace(this, TimeoutError)
-    this.name = 'TimeoutError'
+    captureStackTrace(this, TimeoutError)
+    this.name = this.constructor.name
     this.message = message
 }
 inherits(TimeoutError, Error)

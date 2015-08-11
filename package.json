@@ -34,5 +34,7 @@
     "url": "http://pincin.com"
   },
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "capture-stack-trace": "~1.0.0"
+  }
 }
