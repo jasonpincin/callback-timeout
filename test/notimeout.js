@@ -1,7 +1,7 @@
 var test    = require('tape'),
     timeout = require('..')
 
-test(function (t) {
+test('with no timeout given', function (t) {
     t.plan(3)
 
     function doSomethingSlow (cb) { setTimeout(cb, 1000) }

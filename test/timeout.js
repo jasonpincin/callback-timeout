@@ -2,8 +2,8 @@ var test         = require('tape'),
     timeout      = require('..'),
     TimeoutError = require('../errors').TimeoutError
 
-test(function (t) {
-    t.plan(4)
+test('with timeouts given', function (t) {
+    t.plan(5)
 
     function doSomethingFast (cb) { setTimeout(cb, 100) }
     function doSomethingSlow (cb) { setTimeout(cb, 2000) }
@@ -25,6 +25,7 @@ test(function (t) {
     doSomethingSlow(timeout(function (err) {
         t.ok(err.message.indexOf('anonymous') > -1, 'callback err has proper message for anonymous functions')
         t.ok(err instanceof TimeoutError, 'error is a TimeoutError')
+        t.equals(err.name, 'TimeoutError', 'error.name is TimeoutError')
     }, 250))
 })
 

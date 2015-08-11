@@ -1,7 +1,7 @@
 var test    = require('tape'),
     timeout = require('..')
 
-test(function (t) {
+test('with error message provided', function (t) {
     t.plan(3)
 
     function doSomethingFast (cb) { setTimeout(cb, 50) }
