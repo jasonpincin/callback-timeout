@@ -61,6 +61,12 @@ npm install callback-timeout
 Specifying `--dot` or `--spec` will change the output from the default TAP style. 
 Specifying `--grep` will only run the test files that match the given pattern.
 
+### browser tests
+
+`npm run browser-tests`
+
+This will run the tests in all browsers (specified in .zuul.yml). Be sure to [educate zuul](https://github.com/defunctzombie/zuul/wiki/cloud-testing#2-educate-zuul) first.
+
 ### coverage
 
 `npm run coverage [--html]`
