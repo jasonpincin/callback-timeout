@@ -1,9 +1,13 @@
 language: node_js
 node_js:
-    - "0.10"
-    - "0.12"
+  - '0.10'
+  - '0.12'
 before_install:
-    - npm install -g npm@'>=2.9.1'
+  - npm install -g npm@'>=2.9.1'
 before_script:
-    - npm install -g coveralls@2.10.0
+  - npm install -g coveralls@2.10.0
 script: make travis-test
+env:
+  global:
+    - secure: VUVKZgxROvo9InyJxKZ5GYbVVNXe1nq+c3nSwQkQLiXR6zW8bcXlmVxI31vWfvr06YyD7bhVnVB4u/dLFImWGUQ4JZWVCRd+Tmi3QhsD+e0Lj6UVeW3vPVofC+mRBeXQxTuR80WmyPgXPKqFFrObh8evUw217CvP4ICwCXfuTas=
+    - secure: R1h6UoB848BOhqqy9MFWkLHQ0k8qn8WTb4B1Syt5ZvPmmtWS8OwEksdzee5jRv5h4q/0z+wTZlIq0AibYhpvIfYQh9XETdf1a673ekjDxlhgP2SFvgYT94g73L8weKg6+r65UKgYW4lqbzk5pBEBHwN3J+i292F00TC40rWkm20=
