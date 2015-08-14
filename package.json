@@ -3,10 +3,6 @@
   "version": "1.0.1",
   "description": "Invokes callback with single error argument if timeout occurs before it's invoked by other means",
   "main": "index.js",
-  "scripts": {
-    "test": "make npm-test",
-    "coverage": "make npm-coverage"
-  },
   "directories": {
     "example": "example",
     "test": "test"
@@ -20,6 +16,7 @@
     "callback",
     "timeout"
   ],
+  "license": "MIT",
   "devDependencies": {
     "@jasonpincin/standard": "~5.0.0-7",
     "istanbul": "~0.3.17",
@@ -33,8 +30,11 @@
     "email": "jason@pincin.com",
     "url": "http://pincin.com"
   },
-  "license": "MIT",
   "dependencies": {
-    "capture-stack-trace": "~1.0.0"
+    "define-error": "~1.0.0"
+  },
+  "scripts": {
+    "test": "make npm-test",
+    "coverage": "make npm-coverage"
   }
 }
