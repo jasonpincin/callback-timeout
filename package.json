@@ -21,9 +21,11 @@
     "@jasonpincin/standard": "~5.0.0-7",
     "istanbul": "~0.3.17",
     "opn": "~1.0.2",
+    "phantomjs": "~1.9.18",
     "tap-dot": "~1.0.0",
     "tap-spec": "~4.0.2",
-    "tape": "~4.0.3"
+    "tape": "~4.0.3",
+    "zuul": "~3.2.0"
   },
   "author": {
     "name": "Jason Pincin",
@@ -35,6 +37,7 @@
   },
   "scripts": {
     "test": "make npm-test",
-    "coverage": "make npm-coverage"
+    "coverage": "make npm-coverage",
+    "browser-tests": "zuul -- test/*.js"
   }
 }

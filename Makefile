@@ -7,13 +7,22 @@ all: lint test coverage-html-report coverage-report coverage-check
 help:
 	@echo
 	@echo "To run tests:"
-	@echo "  npm test [--dot | --spec] [--grep=<test file pattern>]"
+	@echo "  npm test [--dot | --spec] [--phantom] [--grep=<test file pattern>]"
 	@echo
 	@echo "To see coverage:"
 	@echo "  npm run coverage [--html]"
 	@echo
 
-npm-test: lint test coverage-check
+npm-test: 
+ifdef npm_config_grep
+	@make lint test
+else
+ifdef npm_config_phantom
+	@make lint test
+else
+	@make lint test coverage-check
+endif
+endif
 
 travis-test: lint test coverage-check
 	@(cat coverage/lcov.info | coveralls) || exit 0
@@ -39,7 +48,11 @@ endif
 endif
 
 test-tap:
+ifdef npm_config_phantom
+	@find ./test -maxdepth 1 -name "*.js" -type f | grep ""$(npm_config_grep) | xargs $(BIN)/zuul --phantom --
+else
 	@find ./test -maxdepth 1 -name "*.js" -type f | grep ""$(npm_config_grep) | xargs $(BIN)/istanbul cover --report lcovonly --print none $(BIN)/tape --
+endif
 
 test-dot:
 	@make test-tap | $(BIN)/tap-dot
