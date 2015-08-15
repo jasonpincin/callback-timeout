@@ -1,4 +1,4 @@
-.PHONY: help clean coverage-check browse-coverage coverage-report coverage-html-report test test-tap test-dot test-spec npm-test travis-test
+.PHONY: help clean coverage-check browse-coverage coverage-report coverage-html-report test test-tap test-dot test-spec npm-test travis-test browser-test
 
 BIN = ./node_modules/.bin
 
@@ -8,6 +8,9 @@ help:
 	@echo
 	@echo "To run tests:"
 	@echo "  npm test [--dot | --spec] [--phantom] [--grep=<test file pattern>]"
+	@echo
+	@echo "To run tests in all browsers:"
+	@echo "  npm run browser-test"
 	@echo
 	@echo "To see coverage:"
 	@echo "  npm run coverage [--html]"
@@ -26,6 +29,10 @@ endif
 
 travis-test: lint test coverage-check
 	@(cat coverage/lcov.info | coveralls) || exit 0
+	@make browser-test || exit 0
+
+browser-test:
+	@$(BIN)/zuul -- test/*.js
 
 npm-coverage: coverage-report coverage-html-report
 ifdef npm_config_html
@@ -69,7 +76,7 @@ coverage-check: coverage
 	$(if $(npm_config_grep),,@if [ -s coverage/error ]; then echo; grep ERROR coverage/error; echo; exit 1; fi)
 
 coverage-report: coverage
-	@$(BIN)/istanbul report text #| grep -v "Using reporter" | grep -v "Done"
+	@$(BIN)/istanbul report text
 
 coverage-html-report: coverage
 	@$(BIN)/istanbul report html > /dev/null

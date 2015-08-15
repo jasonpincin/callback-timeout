@@ -38,6 +38,6 @@
   "scripts": {
     "test": "make npm-test",
     "coverage": "make npm-coverage",
-    "browser-tests": "zuul -- test/*.js"
+    "browser-test": "make browser-test"
   }
 }
