@@ -9,7 +9,7 @@ before_script:
   - npm install -g coveralls@2.10.0
 script: 
   - make travis-test
-  - [ "${TRAVIS_NODE_VERSION}" = "0.12" ] && make browser-test
+  - '[ "${TRAVIS_NODE_VERSION}" = "0.12" ] && make browser-test'
 env:
   global:
     - secure: VUVKZgxROvo9InyJxKZ5GYbVVNXe1nq+c3nSwQkQLiXR6zW8bcXlmVxI31vWfvr06YyD7bhVnVB4u/dLFImWGUQ4JZWVCRd+Tmi3QhsD+e0Lj6UVeW3vPVofC+mRBeXQxTuR80WmyPgXPKqFFrObh8evUw217CvP4ICwCXfuTas=
