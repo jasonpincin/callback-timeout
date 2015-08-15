@@ -29,7 +29,6 @@ endif
 
 travis-test: lint test coverage-check
 	@(cat coverage/lcov.info | coveralls) || exit 0
-	@make browser-test || exit 0
 
 browser-test:
 	@$(BIN)/zuul -- test/*.js
