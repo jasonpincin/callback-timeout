@@ -57,9 +57,10 @@ npm install callback-timeout
 
 ## testing
 
-`npm test [--dot | --spec] [--grep=pattern]`
+`npm test [--dot | --spec] [--phantom] [--grep=pattern]`
 
 Specifying `--dot` or `--spec` will change the output from the default TAP style. 
+Specifying `--phantom` will cause the tests to run in the headless phantom browser instead of node.
 Specifying `--grep` will only run the test files that match the given pattern.
 
 ### browser test
