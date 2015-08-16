@@ -4,6 +4,7 @@ callback-timeout
 [![NPM version](https://badge.fury.io/js/callback-timeout.png)](http://badge.fury.io/js/callback-timeout)
 [![Build Status](https://travis-ci.org/jasonpincin/callback-timeout.svg?branch=master)](https://travis-ci.org/jasonpincin/callback-timeout)
 [![Coverage Status](https://coveralls.io/repos/jasonpincin/callback-timeout/badge.png?branch=master)](https://coveralls.io/r/jasonpincin/callback-timeout?branch=master)
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/jp-callback-timeout.svg)](https://saucelabs.com/u/jp-callback-timeout)
 
 Executes callback with single error argument if timeout is exceeded before it's called naturally
 
