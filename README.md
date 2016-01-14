@@ -45,7 +45,7 @@ Returns a callback function that will execute after `ms` milliseconds with a sin
 
 ### TimeoutError
 
-The constructor of the error thrown when a timeout occurs.
+The constructor of the error supplied to the `callback` when a timeout occurs.
 
 ## install
 
