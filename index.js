@@ -9,8 +9,7 @@ module.exports = function callbackTimeout (f, t, e) {
     clearTimeout(timer)
     timer = null
     var msg = e || 'timeout of ' +
-      t +
-      'ms exceeded for callback ' +
+      t + 'ms exceeded for callback ' +
       (f.name || 'anonymous')
     f.call(f, new errors.TimeoutError(msg))
   }
