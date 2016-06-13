@@ -1,4 +1,4 @@
-var TimeoutError = require('./errors').TimeoutError
+var errors = require('./errors')
 
 module.exports = function callbackTimeout (f, t, e) {
   if (!t) return f
@@ -12,7 +12,7 @@ module.exports = function callbackTimeout (f, t, e) {
       t +
       'ms exceeded for callback ' +
       (f.name || 'anonymous')
-    f.call(f, new TimeoutError(msg))
+    f.call(f, new errors.TimeoutError(msg))
   }
 
   function callback () {
