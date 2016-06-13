@@ -1,3 +1,7 @@
 var defineError = require('define-error')
 
-module.exports.TimeoutError = defineError('TimeoutError')
+module.exports.TimeoutError = defineError('TimeoutError', TimeoutError)
+
+function TimeoutError () {
+  this.code = 'ETIMEOUT'
+}
