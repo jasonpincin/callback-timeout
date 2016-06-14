@@ -9,7 +9,7 @@ module.exports = function callbackTimeout (f, t, e) {
       errorFactory = e
     else {
       errorFactory = function factory() {
-        return new TimeoutError(e || 'timeout of ' + t + 'ms exceeded for callback ' + (f.name || 'anonymous')))
+        return new TimeoutError(e || 'timeout of ' + t + 'ms exceeded for callback ' + (f.name || 'anonymous'))
       }
 
     var timer = setTimeout(onTimeout, t)
