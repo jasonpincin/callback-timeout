@@ -58,21 +58,22 @@ npm install callback-timeout
 
 ## testing
 
-`npm test [--dot | --spec] [--phantom] [--grep=pattern]`
-
-Specifying `--dot` or `--spec` will change the output from the default TAP style. 
-Specifying `--phantom` will cause the tests to run in the headless phantom browser instead of node.
-Specifying `--grep` will only run the test files that match the given pattern.
+`npm test`
 
 ### browser test
 
-`npm run browser-test`
+`npm run phantom`
 
+or 
+
+`npm run travis-browser-test`
 This will run the tests in all browsers (specified in .zuul.yml). Be sure to [educate zuul](https://github.com/defunctzombie/zuul/wiki/cloud-testing#2-educate-zuul) first.
 
 ### coverage
 
-`npm run coverage [--html]`
+For a textual coverage overview:
+`npm run view-cover`
 
-This will output a textual coverage report. Including `--html` will also open 
-an HTML coverage report in the default browser.
+or for an HTML coverage report:
+
+`npm run open-cover`
