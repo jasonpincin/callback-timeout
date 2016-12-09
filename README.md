@@ -67,6 +67,7 @@ npm install callback-timeout
 or 
 
 `npm run travis-browser-test`
+
 This will run the tests in all browsers (specified in .zuul.yml). Be sure to [educate zuul](https://github.com/defunctzombie/zuul/wiki/cloud-testing#2-educate-zuul) first.
 
 ### coverage
