@@ -72,6 +72,7 @@ This will run the tests in all browsers (specified in .zuul.yml). Be sure to [ed
 ### coverage
 
 For a textual coverage overview:
+
 `npm run view-cover`
 
 or for an HTML coverage report:
