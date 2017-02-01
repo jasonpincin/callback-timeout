@@ -25,7 +25,7 @@ doSomethingFast(timeout(function doSomethingFastHandler (err) {
 
 doSomethingSlow(timeout(function doSomethingSlowHandler (err) {
   if (err)
-    console.log(err.code, err.message) // ETIMEOUT ... 
+    console.log(err.code, err.message) // ETIMEDOUT ... 
   else
     console.log('doSomethingSlowHandler executed without error.') // Will not happen
 }, 1000))
@@ -46,7 +46,7 @@ Returns a callback function that will execute after `ms` milliseconds with a sin
 ### TimeoutError
 
 The constructor of the error supplied to the `callback` when a timeout occurs.
-TimeoutError objects will have a `code` property with the value `ETIMEOUT`.
+TimeoutError objects will have a `code` property with the value `ETIMEDOUT`.
 
 ## install
 
