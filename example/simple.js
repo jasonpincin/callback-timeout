@@ -12,7 +12,7 @@ doSomethingFast(timeout(function doSomethingFastHandler (err) {
 
 doSomethingSlow(timeout(function doSomethingSlowHandler (err) {
   if (err)
-    console.log(err.code, err.message) // ETIMEOUT ...
+    console.log(err.code, err.message) // ETIMEDOUT ...
   else
     console.log('doSomethingSlowHandler executed without error') // Won't happen
 }, 1000))
