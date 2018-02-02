@@ -6,7 +6,6 @@ module.exports = function callbackTimeout (f, t, e) {
   return callback
 
   function onTimeout () {
-    clearTimeout(timer)
     timer = null
     var msg = e || 'timeout of ' +
       t + 'ms exceeded for callback ' +
