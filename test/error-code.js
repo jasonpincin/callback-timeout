@@ -1,7 +1,7 @@
-var test    = require('tape'),
-    timeout = require('..')
+var test    = require('tape')
+var timeout = require('..')
 
-test('errors have code of ETIMEDOUT', function (t) {
+test('errors have code of ETIMEDOUT', function _ (t) {
   t.plan(1)
 
   function doSomethingSlow (cb) { setTimeout(cb, 500) }

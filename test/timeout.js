@@ -1,8 +1,8 @@
-var test         = require('tape'),
-    timeout      = require('..'),
-    TimeoutError = require('../errors').TimeoutError
+var test         = require('tape')
+var timeout      = require('..')
+var TimeoutError = require('../errors').TimeoutError
 
-test('with timeouts given', function (t) {
+test('with timeouts given', function _ (t) {
   t.plan(5)
 
   function doSomethingFast (cb) { setTimeout(cb, 100) }
@@ -22,7 +22,7 @@ test('with timeouts given', function (t) {
       t.fail('doSomethingSlowHandler did not get an error')
   }, 1000))
 
-  doSomethingSlow(timeout(function (err) {
+  doSomethingSlow(timeout(function (err) { // eslint-disable-line func-names
     t.ok(err.message.indexOf('anonymous') > -1,
       'callback err has proper message for anonymous functions')
     t.ok(err instanceof TimeoutError, 'error is a TimeoutError')
