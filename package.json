@@ -1,6 +1,6 @@
 {
   "name": "callback-timeout",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "description": "Invokes callback with single error argument if timeout occurs before it's invoked by other means",
   "main": "index.js",
   "directories": {
