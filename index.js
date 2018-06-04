@@ -7,6 +7,8 @@ module.exports = function callbackTimeout (f, t, e) {
 
   function onTimeout () {
     timer = null
+    if (e === false)
+      return f.call(f, null)
     var msg = e || 'timeout of ' +
       t + 'ms exceeded for callback ' +
       (f.name || 'anonymous')
