@@ -41,7 +41,7 @@ var timeout      = require('callback-timeout'),
 
 ### timeout(callback [, ms, msg])
 
-Returns a callback function that will execute after `ms` milliseconds with a single `TimeoutError` argument if not invoked by other means first. If the `ms` timeout argument is omitted, 0, or null, then the timeout is disabled and the original callback is returned. `msg` may be used to set a custom error message (on timeout), otherwise an appropriate one will be set for you.
+Returns a callback function that will execute after `ms` milliseconds with a single `TimeoutError` argument if not invoked by other means first. If the `ms` timeout argument is omitted, 0, or null, then the timeout is disabled and the original callback is returned. `msg` may be used to set a custom error message (on timeout), otherwise an appropriate one will be set for you. If `false` is set for the timeout message the callback is returned without an error (null, on timeout).
 
 ### TimeoutError
 
